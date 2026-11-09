@@ -1,0 +1,333 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Sonrisa Imperial</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Figtree:wght@400;500;600&display=swap">
+<style>
+/* Layout: columna editorial limpia; hero con reserva al lado, servicios en lista, formulario central, datos al pie. */
+:root{
+  --bg:#F6F8F9; --surface:#FFFFFF; --fg:#10222F; --muted:#5A6B77; --line:#DCE3E8;
+  --btn:#12304A; --on-btn:#FFFFFF; --gold:#9A7A3A; --soft:#E9EFF2;
+  --display:'Newsreader',Georgia,'Times New Roman',serif;
+  --body:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0B1620; --surface:#12212D; --fg:#E7EEF2; --muted:#9AAAB5; --line:#243745;
+  --btn:#D8B56C; --on-btn:#0B1620; --gold:#D8B56C; --soft:#16293A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0B1620; --surface:#12212D; --fg:#E7EEF2; --muted:#9AAAB5; --line:#243745;
+  --btn:#D8B56C; --on-btn:#0B1620; --gold:#D8B56C; --soft:#16293A; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;
+  padding-block:0;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1040px;margin:0 auto}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;letter-spacing:-.01em}
+.eyebrow{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin:0 0 14px}
+
+/* header */
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:22px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-size:1.5rem}
+.brand svg{width:26px;height:26px;color:var(--gold)}
+nav{display:flex;align-items:center;gap:26px;font-size:.95rem}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--fg)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--btn);color:var(--on-btn);
+  border:0;border-radius:999px;padding:13px 26px;font:600 .95rem var(--body);text-decoration:none;cursor:pointer}
+.btn:hover{filter:brightness(1.1)}
+.btn.sm{padding:9px 18px;font-size:.88rem}
+.btn.ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
+@media(max-width:720px){nav a:not(.btn){display:none}}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:center;padding-block:56px 72px}
+.hero h1{font-size:clamp(2.4rem,5.4vw,4rem);line-height:1.06}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero p.lead{color:var(--muted);font-size:1.1rem;max-width:46ch;margin:22px 0 32px}
+.hero .actions{display:flex;flex-wrap:wrap;gap:12px}
+.facts{margin:0;padding:28px;border:1px solid var(--line);border-radius:14px;background:var(--surface);display:grid;gap:20px}
+.facts div{display:grid;gap:2px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.facts div:last-child{border:0;padding:0}
+.facts dt{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.facts dd{margin:0;font-family:var(--display);font-size:1.35rem}
+@media(max-width:820px){.hero{grid-template-columns:1fr;gap:36px;padding-block:32px 48px}}
+
+section{padding-block:72px;border-top:1px solid var(--line)}
+section h2{font-size:clamp(1.8rem,3.6vw,2.6rem);line-height:1.12;max-width:20ch}
+
+/* services */
+.services{margin:40px 0 0;padding:0;list-style:none}
+.ic{width:30px;height:30px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.services li{display:grid;grid-template-columns:30px minmax(0,1fr) minmax(0,1.4fr);gap:24px;padding:22px 0;border-bottom:1px solid var(--line);align-items:center}
+.art{position:relative;aspect-ratio:5/4;max-width:100%;border-radius:20px;background:var(--soft);display:grid;place-items:center;overflow:hidden}
+.art svg{width:100%;height:100%;display:block}
+.hero-side{display:grid;gap:16px;min-width:0}
+.hero-side .facts{padding:20px 24px;gap:14px}
+.hero-side .facts div{padding-bottom:14px}
+.hero-side .facts dd{font-size:1.15rem}
+.why .ic{margin-bottom:14px}
+.services h3{font-size:1.4rem}
+.services p{margin:0;color:var(--muted)}
+@media(max-width:620px){.services li{grid-template-columns:30px 1fr;gap:4px 16px;align-items:start}.services p{grid-column:2}}
+
+/* why */
+.why{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin-top:40px}
+.why h3{font-size:1.25rem;margin-bottom:8px}
+.why p{margin:0;color:var(--muted)}
+@media(max-width:760px){.why{grid-template-columns:1fr;gap:28px}}
+
+/* booking */
+#reservar{background:var(--soft);border:0;border-radius:20px;padding:56px;margin-block:72px 0}
+@media(max-width:620px){#reservar{padding:28px 16px;border-radius:14px}}
+.book{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:56px;align-items:start}
+.book .intro p{color:var(--muted);max-width:36ch;margin:18px 0 0}
+form,.done{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:30px;display:grid;gap:18px;min-width:0}
+.row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+label,.lab{display:grid;gap:6px;font-size:.85rem;font-weight:600}
+input,select{font:400 1rem var(--body);color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px 14px;width:100%;min-width:0}
+input:focus,select:focus{outline:2px solid var(--gold);outline-offset:1px}
+.slots{display:flex;flex-wrap:wrap;gap:8px}
+.slots input{position:absolute;opacity:0;width:1px;height:1px}
+.slots label{font-weight:500;font-size:.9rem}
+.slots span{display:block;padding:9px 16px;border:1px solid var(--line);border-radius:999px;cursor:pointer;background:var(--bg);font-variant-numeric:tabular-nums}
+.slots input:checked+span{background:var(--btn);color:var(--on-btn);border-color:var(--btn)}
+.slots input:focus-visible+span{outline:2px solid var(--gold);outline-offset:2px}
+.slots input:disabled+span{opacity:.35;cursor:not-allowed;text-decoration:line-through}
+.hint{font-size:.85rem;color:var(--muted);margin:0;font-weight:400}
+.err{color:#B3261E;font-size:.88rem;margin:0;min-height:1.2em}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .err{color:#FF8A80}}
+:root[data-theme="dark"] .err{color:#FF8A80}
+.done h3{font-size:1.8rem}
+.done dl{margin:0;display:grid;gap:10px}
+.done dl div{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line);padding-bottom:10px}
+.done dt{color:var(--muted)} .done dd{margin:0;font-weight:600;text-align:right}
+@media(max-width:860px){.book{grid-template-columns:1fr;gap:32px}.row{grid-template-columns:1fr}form,.done{padding:22px}}
+
+/* contact */
+.contact{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin-top:36px}
+.contact h3{font-family:var(--body);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:10px}
+.contact p{margin:0}
+@media(max-width:760px){.contact{grid-template-columns:1fr;gap:24px}}
+footer{border-top:1px solid var(--line);padding-block:28px 40px;color:var(--muted);font-size:.85rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-tooth" viewBox="0 0 24 24"><path d="M7 3C4.500 3 3 5 3 7.500c0 2 .8 3.300 1.300 5.200.6 2.300.7 8.300 2.700 8.300 1.600 0 1.200-5 3-5s1.400 5 3 5c2 0 2.100-6 2.700-8.300.5-1.900 1.300-3.200 1.300-5.200C21 5 19.500 3 17 3c-1.700 0-2.700.9-5 .9S8.700 3 7 3z"/></symbol>
+<symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.500 2.500M15.500 15.500L18 18M18 6l-2.500 2.500M8.500 15.500L6 18"/></symbol>
+<symbol id="i-smile" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 14c1.200 1.800 2.500 2.500 4 2.500s2.800-.7 4-2.500M9 9.500v.5M15 9.500v.5"/></symbol>
+<symbol id="i-braces" viewBox="0 0 24 24"><rect x="3" y="8.500" width="18" height="7" rx="3.500"/><path d="M8 8.500v7M12 8.500v7M16 8.500v7M3 12h18"/></symbol>
+<symbol id="i-implant" viewBox="0 0 24 24"><path d="M7 2.500h10l-1 5H8l-1-5zM9 11h6M9.500 14.500h5M10.500 18h3M12 18v3.500M8 7.500l1 3.500h6l1-3.500"/></symbol>
+<symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L5 14h6l-1 8 8-12h-6l1-8z"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+<symbol id="i-plan" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM8.500 12h7M8.500 16h5"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.500-3.300 8-8 9-4.700-1-8-4.500-8-9V6l8-3zM8.500 12l2.500 2.500 4.500-5"/></symbol>
+</defs></svg>
+<div class="wrap">
+  <header>
+    <a class="brand" href="#top" aria-label="Sonrisa Imperial, inicio">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11l6 5 6-9 6 9 6-5-2 13H6L4 11z"/></svg>
+      Sonrisa Imperial
+    </a>
+    <nav aria-label="Principal">
+      <a href="#servicios">Tratamientos</a>
+      <a href="#clinica">La clínica</a>
+      <a href="#contacto">Contacto</a>
+      <a class="btn sm" href="#reservar">Reservar hora</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div>
+        <p class="eyebrow">Clínica dental</p>
+        <h1>Cuidamos tu sonrisa con <em>calma</em> y precisión.</h1>
+        <p class="lead">Atención dental general y estética en un ambiente tranquilo. Reserva tu hora en menos de un minuto, sin llamadas.</p>
+        <div class="actions">
+          <a class="btn" href="#reservar">Reservar mi hora</a>
+          <a class="btn ghost" href="#servicios">Ver tratamientos</a>
+        </div>
+      </div>
+      <div class="hero-side">
+        <div class="art" role="img" aria-label="Ilustración de una pieza dental">
+          <svg viewBox="0 0 500 400" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="250" cy="205" r="168" stroke="var(--line)" stroke-width="1.5"/>
+            <circle cx="250" cy="205" r="122" stroke="var(--line)" stroke-width="1.5"/>
+            <circle cx="250" cy="205" r="98" fill="var(--surface)"/>
+            <g transform="translate(190 145) scale(5)" stroke="var(--gold)" stroke-width="0.7"><use href="#i-tooth" width="24" height="24"/></g>
+            <path d="M214 75l36-26 36 26" stroke="var(--gold)" stroke-width="2.5"/>
+            <path d="M60 330c60 40 120 56 190 56s130-16 190-56" stroke="var(--gold)" stroke-width="2" opacity=".6"/>
+            <g stroke="var(--gold)" stroke-width="2"><path d="M95 105v22M84 116h22"/><path d="M410 280v18M401 289h18"/><path d="M420 100v12M414 106h12"/></g>
+          </svg>
+        </div>
+        <dl class="facts">
+          <div><dt>Horario</dt><dd id="f-hours">Lun a Vie 9:00 – 18:00</dd></div>
+          <div><dt>Primera visita</dt><dd>Evaluación y plan de tratamiento</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <section id="servicios">
+      <p class="eyebrow">Tratamientos</p>
+      <h2>Todo lo que tu boca necesita, en un solo lugar.</h2>
+      <ul class="services">
+        <li><svg class="ic"><use href="#i-smile"/></svg><h3>Evaluación y control</h3><p>Revisión completa, radiografías cuando corresponde y un plan claro de tratamiento.</p></li>
+        <li><svg class="ic"><use href="#i-sparkle"/></svg><h3>Limpieza dental</h3><p>Eliminación de sarro y placa para encías sanas y aliento fresco.</p></li>
+        <li><svg class="ic"><use href="#i-tooth"/></svg><h3>Blanqueamiento</h3><p>Aclaramiento dental supervisado por el profesional, cuidando el esmalte.</p></li>
+        <li><svg class="ic"><use href="#i-braces"/></svg><h3>Ortodoncia</h3><p>Alineación dental para niños, jóvenes y adultos.</p></li>
+        <li><svg class="ic"><use href="#i-implant"/></svg><h3>Implantes y rehabilitación</h3><p>Reemplazo de piezas dentales con resultados naturales y duraderos.</p></li>
+        <li><svg class="ic"><use href="#i-bolt"/></svg><h3>Urgencia dental</h3><p>Dolor, fracturas o infecciones: te damos hora prioritaria.</p></li>
+      </ul>
+    </section>
+
+    <section id="clinica">
+      <p class="eyebrow">La clínica</p>
+      <h2>Una consulta pensada para que vuelvas sin miedo.</h2>
+      <div class="why">
+        <div><svg class="ic"><use href="#i-clock"/></svg><h3>Sin apuros</h3><p>Cada hora se reserva con tiempo suficiente para explicarte qué haremos y por qué.</p></div>
+        <div><svg class="ic"><use href="#i-plan"/></svg><h3>Plan claro</h3><p>Conoces el tratamiento y los pasos antes de empezar. Sin sorpresas.</p></div>
+        <div><svg class="ic"><use href="#i-shield"/></svg><h3>Higiene rigurosa</h3><p>Instrumental esterilizado y protocolos de limpieza entre cada paciente.</p></div>
+      </div>
+    </section>
+
+    <section id="reservar">
+      <div class="book">
+        <div class="intro">
+          <p class="eyebrow">Reserva online</p>
+          <h2>Elige tu día y horario.</h2>
+          <p>Completa el formulario y envía tu solicitud por WhatsApp. Te confirmamos la hora el mismo día hábil.</p>
+        </div>
+
+        <form id="form" novalidate>
+          <label for="nombre">Nombre completo
+            <input id="nombre" name="nombre" autocomplete="name" required placeholder="Ej: María González">
+          </label>
+          <div class="row">
+            <label for="tel">Teléfono
+              <input id="tel" name="tel" type="tel" autocomplete="tel" required placeholder="+56 9 1234 5678">
+            </label>
+            <label for="mail">Correo (opcional)
+              <input id="mail" name="mail" type="email" autocomplete="email" placeholder="nombre@correo.cl">
+            </label>
+          </div>
+          <label for="serv">Motivo de consulta
+            <select id="serv" name="serv" required>
+              <option value="">Selecciona un tratamiento</option>
+              <option>Evaluación y control</option>
+              <option>Limpieza dental</option>
+              <option>Blanqueamiento</option>
+              <option>Ortodoncia</option>
+              <option>Implantes y rehabilitación</option>
+              <option>Urgencia dental</option>
+            </select>
+          </label>
+          <label for="fecha">Fecha
+            <input id="fecha" name="fecha" type="date" required>
+            <span class="hint" id="fecha-hint">Atendemos de lunes a sábado.</span>
+          </label>
+          <div class="lab" id="slots-lab">Horario disponible
+            <div class="slots" id="slots" role="radiogroup" aria-labelledby="slots-lab"></div>
+          </div>
+          <p class="err" id="err" role="alert"></p>
+          <button class="btn" type="submit">Solicitar hora</button>
+        </form>
+
+        <div class="done" id="done" hidden>
+          <p class="eyebrow">Último paso</p>
+          <h3>Revisa y envía tu solicitud</h3>
+          <dl id="resumen"></dl>
+          <p class="hint">Tu hora queda solicitada cuando envíes el mensaje por WhatsApp. Te responderemos para confirmar.</p>
+          <a class="btn" id="wa" href="#" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+          <button class="btn ghost" type="button" id="editar">Modificar datos</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <p class="eyebrow">Contacto</p>
+      <h2>Visítanos.</h2>
+      <div class="contact">
+        <div><h3>Dirección</h3><p id="c-dir">Av. Providencia 1234, oficina 501<br>Providencia, Santiago</p></div>
+        <div><h3>Teléfono / WhatsApp</h3><p id="c-tel">+56 9 1234 5678</p></div>
+        <div><h3>Horario</h3><p>Lunes a viernes 9:00 a 18:00<br>Sábado 9:00 a 13:00</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© <span id="yr">2026</span> Sonrisa Imperial</span>
+    <span>Los datos de contacto son de ejemplo y se reemplazan con los de la clínica.</span>
+  </footer>
+</div>
+
+<script>
+/* Datos de la clínica: cambiar aquí. WhatsApp en formato internacional sin "+" ni espacios. */
+const CLINICA = {
+  nombre: 'Sonrisa Imperial',
+  whatsapp: '56912345678',
+  horarios: { // 0 = domingo; [inicio, fin) en horas, bloques de 60 min
+    1:[9,18], 2:[9,18], 3:[9,18], 4:[9,18], 5:[9,18], 6:[9,13]
+  }
+};
+
+const $ = id => document.getElementById(id);
+const fecha = $('fecha'), slots = $('slots'), err = $('err');
+const pad = n => String(n).padStart(2,'0');
+const iso = d => `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+const hoy = new Date();
+fecha.min = iso(hoy);
+$('yr').textContent = hoy.getFullYear();
+
+function dia(v){ const [y,m,d] = v.split('-').map(Number); return new Date(y,m-1,d); }
+
+function pintarHoras(){
+  slots.innerHTML = '';
+  if(!fecha.value){ slots.innerHTML = '<span class="hint">Elige primero una fecha.</span>'; return; }
+  const d = dia(fecha.value), h = CLINICA.horarios[d.getDay()];
+  if(!h){ slots.innerHTML = '<span class="hint">Ese día no atendemos. Elige otra fecha.</span>'; return; }
+  const esHoy = iso(d) === iso(hoy);
+  for(let hr = h[0]; hr < h[1]; hr++){
+    const id = 'h' + hr;
+    const lab = document.createElement('label');
+    lab.innerHTML = `<input type="radio" name="hora" id="${id}" value="${pad(hr)}:00"><span>${pad(hr)}:00</span>`;
+    if(esHoy && hr <= hoy.getHours()) lab.querySelector('input').disabled = true;
+    slots.appendChild(lab);
+  }
+}
+fecha.addEventListener('change', pintarHoras);
+pintarHoras();
+
+const form = $('form'), done = $('done');
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const v = Object.fromEntries(new FormData(form));
+  err.textContent = '';
+  if(!v.nombre.trim()) return err.textContent = 'Escribe tu nombre.';
+  if(v.tel.replace(/\D/g,'').length < 8) return err.textContent = 'Revisa tu teléfono, parece incompleto.';
+  if(!v.serv) return err.textContent = 'Elige el motivo de consulta.';
+  if(!v.fecha) return err.textContent = 'Elige una fecha.';
+  if(!CLINICA.horarios[dia(v.fecha).getDay()]) return err.textContent = 'Ese día no atendemos. Elige otra fecha.';
+  if(!v.hora) return err.textContent = 'Elige un horario.';
+
+  const fechaTxt = dia(v.fecha).toLocaleDateString('es-CL',{weekday:'long',day:'numeric',month:'long'});
+  const filas = [['Paciente',v.nombre],['Teléfono',v.tel],['Motivo',v.serv],['Fecha',fechaTxt],['Hora',v.hora]];
+  $('resumen').innerHTML = '';
+  filas.forEach(([k,val]) => {
+    const row = document.createElement('div');
+    const dt = document.createElement('dt'); dt.textContent = k;
+    const dd = document.createElement('dd'); dd.textContent = val;
+    row.append(dt, dd); $('resumen').appendChild(row);
+  });
+  const msg = `Hola ${CLINICA.nombre}, quiero reservar una hora.\nNombre: ${v.nombre}\nTeléfono: ${v.tel}\nMotivo: ${v.serv}\nFecha: ${fechaTxt}\nHora: ${v.hora}` + (v.mail ? `\nCorreo: ${v.mail}` : '');
+  $('wa').href = `https://wa.me/${CLINICA.whatsapp}?text=${encodeURIComponent(msg)}`;
+  form.hidden = true; done.hidden = false;
+  done.scrollIntoView({behavior:'smooth',block:'center'});
+});
+$('editar').addEventListener('click', () => { done.hidden = true; form.hidden = false; });
+</script>
+
+</body></html>
